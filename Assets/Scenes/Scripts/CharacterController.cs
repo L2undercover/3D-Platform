@@ -15,8 +15,8 @@ public class CharacterController : MonoBehaviour
     public LayerMask groundLayer;
     public float jumpForce = 300.0f;
 
-    public float normalSpeed = 10.0f;
-    public float sprintSpeed = 20.0f;
+    public float normalSpeed = 2.0f;
+    public float sprintSpeed = 4.0f;
 
     float rotationSpeed = 2.0f;
     float camRotationSpeed = 1.5f;
@@ -30,6 +30,8 @@ public class CharacterController : MonoBehaviour
         
         cam = GameObject.Find("Main Camera");
         myRigidbody = GetComponent<Rigidbody>();
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
