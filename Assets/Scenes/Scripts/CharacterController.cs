@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    float maxSpeed = 1.0f;
+    float maxSpeed;
     float rotation = 0.0f;
     float camRotation = 0.0f;
     GameObject cam;
@@ -15,8 +15,8 @@ public class CharacterController : MonoBehaviour
     public LayerMask groundLayer;
     public float jumpForce = 300.0f;
 
-    public float normalSpeed = 2.0f;
-    public float sprintSpeed = 4.0f;
+    public float normalSpeed = 4.0f;
+    public float sprintSpeed = 8.0f;
 
     float rotationSpeed = 2.0f;
     float camRotationSpeed = 1.5f;
