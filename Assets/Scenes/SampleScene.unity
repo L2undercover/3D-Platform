@@ -139,20 +139,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &84690323
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147954070071}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &84690324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,14 +151,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 118c4b58801e71046bade3bac7ca2fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 0
+  normalSpeed: 3
+  sprintSpeed: 6
+  rotation: 0
+  camRotation: 0
+  rotationSpeed: 2
+  camRotationSpeed: 1.5
   groundChecker: {fileID: 282869590}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   jumpForce: 300
-  normalSpeed: 3
-  sprintSpeed: 6
-  maxSprint: 5
 --- !u!1 &282869590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,8 +1526,8 @@ GameObject:
   m_Component:
   - component: {fileID: 543450651686987917}
   - component: {fileID: 84690322}
-  - component: {fileID: 84690323}
   - component: {fileID: 84690324}
+  - component: {fileID: 919132147954070072}
   m_Layer: 0
   m_Name: 3D Platform Character
   m_TagString: Untagged
@@ -1545,6 +1535,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &919132147954070072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147954070071}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09096919, y: 0.1362792, z: 0.16037121}
+  m_Center: {x: -0.012410456, y: 0.08181973, z: 0.0153782815}
 --- !u!1 &1306080076486610656
 GameObject:
   m_ObjectHideFlags: 0
