@@ -8,6 +8,8 @@ public class CharacterController : MonoBehaviour
 
     void Start()
     {
+        myAnim = GetComponentInChildren<Animator>();
+        
         cam = GameObject.Find("Main Camera");
         myRigidbody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -22,6 +24,7 @@ public class CharacterController : MonoBehaviour
     public float camRotationSpeed = 1.5f;
     GameObject cam;
     Rigidbody myRigidbody;
+    Animator myAnim;
 
     bool isOnGround;
     public GameObject groundChecker;
@@ -45,6 +48,8 @@ public class CharacterController : MonoBehaviour
             maxSpeed = normalSpeed;
         }
 
+        
+        
         Vector3 newVelocity = transform.forward * Input.GetAxis("Vertical") * maxSpeed + (transform.right * Input.GetAxis("Horizontal") * maxSpeed);
         myRigidbody.velocity = new Vector3(newVelocity.x, myRigidbody.velocity.y, newVelocity.z);
 
@@ -54,5 +59,7 @@ public class CharacterController : MonoBehaviour
         camRotation = camRotation - Input.GetAxis("Mouse Y") * camRotationSpeed;
         camRotation = Mathf.Clamp(camRotation, -40.0f, 40.0f);
         cam.transform.localRotation = Quaternion.Euler(new Vector3(camRotation, 0.0f, 0.0f));
+        
+        myAnim.SetFloat("speed", newVelocity.magnitude);
     }
 }
