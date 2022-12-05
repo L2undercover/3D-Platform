@@ -12,7 +12,6 @@ public class CharacterController : MonoBehaviour
         
         cam = GameObject.Find("Main Camera");
         myRigidbody = GetComponent<Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public float maxSpeed;
@@ -34,9 +33,11 @@ public class CharacterController : MonoBehaviour
     void Update()
     {
         isOnGround = Physics.CheckSphere(groundChecker.transform.position, 0.1f, groundLayer);
+        myAnim.SetBool("isOnGround", isOnGround);
 
         if (isOnGround == true && Input.GetKeyDown(KeyCode.Space))
         {
+            myAnim.SetTrigger("jumped");
             myRigidbody.AddForce(transform.up * jumpForce);
         }
 
